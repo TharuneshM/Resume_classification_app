@@ -1,0 +1,7 @@
+aspose-words
+flask
+joblib
+matplotlib
+nltk
+numpy
+scikit-learn==1.0.2

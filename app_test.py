@@ -14,8 +14,9 @@ import matplotlib.pyplot as plt
 app = Flask(__name__)
 
 # Load pre-trained TfidfVectorizer and SVM model
-word_vectorizer = joblib.load(open('C:\\Users\\Tharun\\Desktop\\PROJECT ML\\resume_repo\\Resume_classification_app\\word_vectorizer.pkl', 'rb'))
-clf_pkl = joblib.load(open('C:\\Users\\Tharun\\Desktop\\PROJECT ML\\resume_repo\\Resume_classification_app\\fmodel.sav', 'rb'))
+current_dir = os.path.dirname(__file__)
+word_vectorizer = joblib.load(os.path.join(current_dir, 'word_vectorizer.pkl'), 'rb')
+clf_pkl = joblib.load(os.path.join(current_dir, 'fmodel.sav'), 'rb')
 
 # Define category mapping
 category_mapping = {0: "PeopleSoft Resume", 1: "React JS Developer Resume", 2: "SQL Developer Lightning Insight Resume", 3: "Workday Resume"}
@@ -46,7 +47,7 @@ def home():
 def predict():
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
-    file_path = os.path.join('C:\\Users\\Tharun\\Desktop\\PROJECT ML\\resume_repo\\Resume_classification_app\\store', filename)
+    file_path = os.path.join(os.path.join(current_dir,'store'), filename)
     uploaded_file.save(file_path)
 
     # Read file using Aspose Words

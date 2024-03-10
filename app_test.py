@@ -13,6 +13,8 @@ import string
 from nltk.corpus import stopwords
 import matplotlib.pyplot as plt
 
+nltk.data.path.append("nltk_data")
+
 # Load pre-trained TfidfVectorizer and SVM model
 word_vectorizer = joblib.load(open('word_vectorizer.pkl', 'rb'))
 clf_pkl = joblib.load(open('fmodel.sav','rb'))

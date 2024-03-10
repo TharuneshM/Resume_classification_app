@@ -5,4 +5,5 @@ matplotlib
 nltk
 numpy
 scikit-learn==1.0.2
-gunicorn
+pandas
+wordcloud

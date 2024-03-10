@@ -14,8 +14,8 @@ from nltk.corpus import stopwords
 import matplotlib.pyplot as plt
 
 # Load pre-trained TfidfVectorizer and SVM model
-word_vectorizer = joblib.load(open('C:\\Users\\Tharun\\Desktop\\PROJECT ML\\resume classification\\word_vectorizer.pkl', 'rb'))
-clf_pkl = joblib.load(open('C:\\Users\\Tharun\\Desktop\\PROJECT ML\\resume classification\\fmodel.sav','rb'))
+word_vectorizer = joblib.load(open('word_vectorizer.pkl', 'rb'))
+clf_pkl = joblib.load(open('fmodel.sav','rb'))
 
 # Define category mapping
 category_mapping = {0: "PeopleSoft Resume", 1: "React JS Developer Resume", 2: "SQL Developer Lightning Insight Resume", 3: "Workday Resume"}

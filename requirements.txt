@@ -1,5 +1,5 @@
 aspose-words
-flask
+streamlit
 joblib
 matplotlib
 nltk
